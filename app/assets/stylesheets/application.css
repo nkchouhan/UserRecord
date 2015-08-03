@@ -22,3 +22,9 @@
   background: rgba(0, 0, 0, 0) url("/assets/loader.GIF") no-repeat scroll 0 0 / 50px auto;
   padding-left: 54px;
 }
+
+.text-field{
+  font-size: 18px;
+  height: 36px;
+  width: 90%;
+}
