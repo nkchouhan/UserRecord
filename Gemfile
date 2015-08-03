@@ -41,3 +41,7 @@ gem 'remotipart'
 gem 'sidekiq'
 gem 'sinatra', require: false
 
+group :production do
+  gem 'rails_12factor'
+  gem 'unicorn'
+end
