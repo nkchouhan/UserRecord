@@ -1,0 +1,5 @@
+"<% if @result[:errors].present? %>"
+  $('.error').html("<%= @result[:errors].join(', ') %>")
+"<% else %>"
+  window.location = "<%= admin_root_path %>"
+"<% end %>"

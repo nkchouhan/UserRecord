@@ -1,2 +1,0 @@
-module UserRecordsHelper
-end

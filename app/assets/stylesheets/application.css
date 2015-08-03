@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+.margin-top-20{
+  margin-top: 20px;
+}
+
+.loader{
+  background: rgba(0, 0, 0, 0) url("/assets/loader.GIF") no-repeat scroll 0 0 / 50px auto;
+  padding-left: 54px;
+}

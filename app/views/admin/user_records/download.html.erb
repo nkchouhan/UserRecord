@@ -1,0 +1,4 @@
+Business Name, Phone Number, URL
+<% @user_record.each do |user_record| %>
+  <%= (user_record.business_name.gsub(',', '')) %>, <%= user_record.phone_number %>, <%= user_record.url %>
+<% end %>

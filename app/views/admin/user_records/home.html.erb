@@ -1,0 +1,49 @@
+<div class="well">
+  <%= form_for @user_record, url: upload_admin_user_records_path, :html => { :multipart => true }, :remote => true  do |f| %>
+    <span class='error'></span>
+    <h3>Upload CSV File</h3>
+    <div class='row'>
+      <div class='col-md-12'>
+        <%= f.file_field :files %>
+      </div>
+      <div class='col-md-12 margin-top-20'>
+        <%= f.submit "Upload" ,class: "btn btn-primary" %>
+      </div>
+    </div>
+    
+  <% end %>
+</div>
+
+<div class='well'>
+  <h3>Download CSV File</h3>
+  <% if @all_process.present? %>
+    <%= form_tag download_admin_user_records_path do %>
+      <% @all_process.each do |process| %>
+        <% if @in_progress.include? process %>
+          <p class="loader">In Progress <%= process %> <%= check_box_tag 'download[]', process, false, class: 'download_ckb' %></p>
+        <% else %>
+          <p>Completed <%= process %> <%= check_box_tag 'download[]', process, false, class: 'download_ckb' %> </p>
+        <% end %>
+      <% end%>
+      <p>All <%= check_box_tag 'download[]', 'all', false, class: 'download_ckb all' %> </p>
+      <%= submit_tag "Download" ,class: "btn btn-primary" %>
+    <% end %>
+  <% else %>
+    <h3>There are no data to download</h3>
+  <% end %>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $(".download_ckb").change(function() {
+      if(this.checked) {
+        if(this.value=='all'){
+          $(".download_ckb").prop('checked', false);
+          $(this).prop('checked', true);
+        }else{
+          $(".download_ckb.all").prop('checked', false);
+        }
+      }
+    });
+  })
+</script>
