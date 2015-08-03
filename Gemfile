@@ -33,3 +33,11 @@ gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'devise'
+gem 'nokogiri'
+gem 'carrierwave'
+gem 'roo'
+gem 'roo-xls'
+gem 'remotipart'
+gem 'sidekiq'
+gem 'sinatra', require: false
+
